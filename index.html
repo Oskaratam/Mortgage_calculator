@@ -32,16 +32,26 @@
           </div>
 
           <div class="input-control">
-            <label for="rate"></label>
+            <label for="rate">Interest Rate</label>
             <input id="rate" type="number">
           </div>
 
+          <div id="radioForm" class="input-control">
+            <label class="mortgageTypeLabel">Mortgage Type</label>
+            <div>
+              <input id="repayment" name="type" type="radio">
+              <label for="repayment">Repayment</label>
+            </div>
+            <div class="interestWrapper">
+              <input id="interest" name="type" type="radio">
+              <label for="interest">Interest only</label>
+            </div>
+
+          </div>
+          <button id="calculateBtn" type="submit">Calculate Repayments</button>
         </div>
       </form>
     </section>
-
-
-
 
 
 
