@@ -5,57 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Mortgage repayment calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <title>Mortgage repayment calculator</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <main>
+    <section class="mainSection">
+      <div class="wrapper">
 
-  Mortgage Calculator
-  Clear All
+        <header>
+          <h1>Mortgage Calculator</h1>
+          <button id="clearBtn">Clear all</button>
 
-  Mortgage Amount
+        </header>
+        <form id="form" action="/">
 
-  Mortgage Term
+          <div class="input-control">
+            <label for="amount">Mortgage Amount</label>
+            <input id="amount" type="number">
+          </div>
 
-  Interest Rate
+          <div class="input-control">
+            <label for="term">Mortgage Term</label>
+            <input id="term" type="number">
+          </div>
 
-  Mortgage Type
-  Repayment
-  Interest Only
+          <div class="input-control">
+            <label for="rate"></label>
+            <input id="rate" type="number">
+          </div>
 
-  Calculate Repayments
+        </div>
+      </form>
+    </section>
 
-  <!-- Empty results start -->
 
-  Results shown here
 
-  Complete the form and click “calculate repayments” to see what 
-  your monthly repayments would be.
 
-  <!-- Empty results end -->
 
-  <!-- Completed results start -->
 
-  Your results
 
-  Your results are shown below based on the information you provided. 
-  To adjust the results, edit the form and click “calculate repayments” again.
+    <section class="resultSection">
 
-  Your monthly repayments
+    </section>
 
-  Total you'll repay over the term
-
-  <!-- Completed results end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </main>
 </body>
 </html>
