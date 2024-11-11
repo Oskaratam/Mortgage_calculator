@@ -81,6 +81,7 @@ h1 {
 
 .input-control {
     display: flex;
+    position:relative;
     flex-direction: column;
     margin-bottom: 1.8rem;
 }
@@ -100,24 +101,72 @@ label {
 }
 
 input{
+    position: relative;
     height: 2rem;
+    padding-left: 15px;
     border: 1.2px solid var(--Slate700);
     border-radius: 7px;
+    font-weight: bold;
+    color:rgb(31, 31, 31);
 }
 
 input[name="type"] {
     transform:scale(1.5);
 }
 
+.input-control > button {
+    position: absolute;
+    font-size: 0.9rem;
+    top: 1.94rem;
+    min-width: 40px;
+    width: fit-content;
+    height: 32.5px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    background-color: var(--Slate100);
+    font-weight: bold;
+    color: var(--Slate700);
+    border: 0;
+}
+
+.input-control > .termButton, .input-control > .rateButton  {
+    border-radius: 0;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    right: 1.2px;
+}
+
+.input-control > .currencyButton {
+    left: 1.2px;
+}
+
+
+#amount {
+    padding-left: 55px;
+}
+
+#radioForm {
+    justify-items: center;
+}
+
+
 #calculateBtn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 3rem;
     border: none;
     border-radius: 35px;
     background-color: var(--Lime);
+    font-weight:900;
+    align-items: center;
 }
 
-
+svg {
+    margin-right:10px;
+}
 
 @media (min-width: 768px) {
     body {
@@ -175,6 +224,15 @@ input[name="type"] {
     }
     .interestWrapper {
         padding-left: 0.8rem;
+    }
+
+    #calculateBtn {
+        margin-top: 10%;
+    }
+
+    .mortgageTypeLabel {
+        margin-bottom: 0px;
+        margin-top: 5px;
     }
 }
 
