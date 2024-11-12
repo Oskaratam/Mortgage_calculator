@@ -114,6 +114,11 @@ input[name="type"] {
     transform:scale(1.5);
 }
 
+input[type="radio"] {
+    accent-color: rgba(117, 118, 43);
+    filter: brightness(150%);
+}
+
 .input-control > button {
     position: absolute;
     font-size: 0.9rem;
@@ -166,6 +171,23 @@ input[name="type"] {
 
 svg {
     margin-right:10px;
+}
+
+
+
+@media (min-height: 810px){
+    #radioForm > div {
+        border-radius: 7px;
+        padding-left: 20px;
+        margin-top: 10px;
+        border: 1.2px solid black;
+    } 
+
+    #radioForm > .pickedOption {
+        transition: background-color ease-in 0.2s;
+        background-color: hsla(61, 70%, 52%, 30%);
+        border: 1.2px solid rgb(143, 145, 2);
+    }
 }
 
 @media (min-width: 768px) {

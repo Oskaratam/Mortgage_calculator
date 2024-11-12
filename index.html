@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="styles.css">
   <title>Mortgage repayment calculator</title>
-
+  <script defer src="script.js"></script>
 </head>
 <body>
   <main>
@@ -41,11 +41,11 @@
 
           <div id="radioForm" class="input-control">
             <label class="mortgageTypeLabel">Mortgage Type</label>
-            <div>
+            <div id="repaymentWrapper">
               <input id="repayment" name="type" type="radio">
               <label for="repayment">Repayment</label>
             </div>
-            <div class="interestWrapper">
+            <div id="interestWrapper" class="interestWrapper">
               <input id="interest" name="type" type="radio">
               <label for="interest">Interest only</label>
             </div>
