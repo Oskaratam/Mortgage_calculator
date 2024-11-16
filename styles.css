@@ -37,6 +37,8 @@ main {
     flex-direction: column;
 }
 
+
+/*MAIN SECTION STYLING */
 .mainSection {
     display: flex;
     flex-direction: column;
@@ -46,13 +48,6 @@ main {
     height: 65%;
     position: relative;
     overflow-y: scroll ;
-}
-
-.resultSection {
-    position: relative;
-    width: 100%;
-    height: 35%;
-    background-color: var(--Slate900);
 }
 
 .wrapper {
@@ -174,6 +169,80 @@ svg {
 }
 
 
+/*RESULT SECTION STYLING */
+
+.resultSection {
+    position: relative;
+    width: 100%;
+    height: 35%;
+    background-color: var(--Slate900);
+    color: white;
+    overflow: hidden;
+}
+
+.calculatorImage {
+    height: 50%;
+}
+
+.resultsWrapper {
+    position: relative;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 90%;
+    padding:5%;
+}
+
+#resultDiv {
+    position: relative;
+    padding: 1rem;
+    height: 70%;
+    width: 90%;
+    background-color: hsl(201, 56%, 10%);
+    border-radius: 7px;
+    color: var(--Slate500);
+}
+
+#resultDiv::before {
+    content: "";
+    height: 0.3rem;
+    position: absolute;
+    width: 100%;
+    top: -3%;
+    left:0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: var(--Lime);
+}
+h3{
+    margin: 0;
+    height: 1.2rem;
+    margin-bottom: 3%;
+}
+
+.result1 {
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+}
+
+.monthValue {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: auto;
+    color: var(--Lime);
+}
+
+.totalValue {
+    font-weight: bold;
+    color: white;
+    font-size: 1.5rem;
+}
+
+
+
 
 @media (min-height: 810px){
     #radioForm > div {
@@ -184,7 +253,7 @@ svg {
     } 
 
     #radioForm > .pickedOption {
-        transition: background-color ease-in 0.2s;
+        transition: background-color ease-in 0.1s;
         background-color: hsla(61, 70%, 52%, 30%);
         border: 1.2px solid rgb(143, 145, 2);
     }

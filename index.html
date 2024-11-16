@@ -23,30 +23,30 @@
 
           <div class="input-control">
             <label for="amount">Mortgage Amount</label>
-            <input id="amount" type="number">
+            <input name="amount"  id="amount" type="number">
             <button class="currencyButton">&pound</button>
           </div>
 
           <div class="input-control">
             <label for="term">Mortgage Term</label>
-            <input id="term" type="number">
+            <input  name="term"  id="term" type="number">
             <button class="termButton">years</button>
           </div>
 
           <div class="input-control">
             <label for="rate">Interest Rate</label>
-            <input id="rate" type="number">
+            <input step="any" name="rate"  id="rate" type="number">
             <button class="rateButton">%</button>
           </div>
 
           <div id="radioForm" class="input-control">
             <label class="mortgageTypeLabel">Mortgage Type</label>
             <div id="repaymentWrapper">
-              <input id="repayment" name="type" type="radio">
+              <input  id="repayment" value="repayment" name="type" type="radio">
               <label for="repayment">Repayment</label>
             </div>
             <div id="interestWrapper" class="interestWrapper">
-              <input id="interest" name="type" type="radio">
+              <input  id="interest" value="interest" name="type" type="radio">
               <label for="interest">Interest only</label>
             </div>
 
@@ -60,7 +60,22 @@
 
 
     <section class="resultSection">
+      <div class="resultsWrapper">
+        <img class="calculatorImage" src="assets/images/illustration-empty.svg" alt="Calculator image">
+        <h2>Results shown here</h2>
+        <p>Complete the form and click "calculate repayments" to see what your monthly <br> repayments would be</p>
+        <div id="resultDiv">
+          <div class="result1">
+            <h3>Your monthly repayments</h3>
+            <span class="monthValue" id="month-repay-value">&pound5000</span>
+          </div>
+          <div class="result2">
+            <h3>Total you'll repay over the term</h3>
+            <span class="totalValue">&pound423,323.34</span>
+          </div>
+        </div>
 
+      </div>
     </section>
 
   </main>
