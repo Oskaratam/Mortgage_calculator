@@ -62,6 +62,9 @@ const showResults = (monthly, total) => {
         justify-content: normal;
         align-items: normal;
     `
+    document.querySelector("#resultDiv").style.display = "inline-block";
+    document.querySelectorAll("h3").forEach(el => el.style.display = "inline-block");
+    document.getElementById("month-repay-value").innerHTML = monthly;
+    document.getElementById("total-repay-value").innerHTML = total;
 }
 
-showResults();
