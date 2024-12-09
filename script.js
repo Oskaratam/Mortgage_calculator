@@ -53,10 +53,55 @@ const calculateResults = (data) => {
 
 
 document.getElementById('form').addEventListener("submit", (event) => {
+    let isValid = true;
     event.preventDefault();
     let formData = new FormData(event.target);
-    calculateResults(formData);
+    let amount = parseFloat(formData.get("amount"));
+    let rate = parseFloat(formData.get("rate")) / 100;
+    let term = parseInt(formData.get("term"));
+
+    if(isNaN(amount) || amount <= 0){
+        document.querySelector(".errorMessageAmount").innerHTML = "Invalid input";
+        document.querySelector("#amount").classList.add("errorInput");
+        document.querySelector(".input-control > .currencyButton").style.backgroundColor = "red";
+        isValid = false;
+
+    } else {
+        document.querySelector(".errorMessageAmount").innerHTML = "";
+        document.querySelector("#amount").classList.remove("errorInput");
+        document.querySelector(".input-control > .currencyButton").style.backgroundColor = "hsl(202, 86%, 94%)";
+    }
+
+    if(isNaN(rate) || rate <= 0 || rate > 100 ){
+        document.querySelector(".errorMessageRate").innerHTML = "Invalid input";
+        document.querySelector("#rate").classList.add("errorInput");
+        document.querySelector(".input-control > .rateButton").style.backgroundColor = "red";
+        isValid = false;
+
+    } else {
+        document.querySelector(".errorMessageRate").innerHTML = "";
+        document.querySelector("#rate").classList.remove("errorInput");
+        document.querySelector(".input-control > .rateButton").style.backgroundColor = "hsl(202, 86%, 94%)";
+    }
+
+    if(isNaN(term) || term <= 0 || term > 50){
+        document.querySelector(".errorMessageTerm").innerHTML = "Invalid input. Max term is 50 years";
+        document.querySelector("#term").classList.add("errorInput");
+        document.querySelector(".input-control > .termButton").style.backgroundColor = "red";
+        isValid = false;
+    } else {
+        document.querySelector(".errorMessageTerm").innerHTML = "";
+        document.querySelector("#term").classList.remove("errorInput");
+        document.querySelector(".input-control > .termButton").style.backgroundColor = "hsl(202, 86%, 94%)";
+    }
+
+    console.log(formData.get("repayement"));
     
+
+
+    if(isValid){
+        calculateResults(formData);
+    }    
 } )
 
 

@@ -168,6 +168,22 @@ svg {
     margin-right:10px;
 }
 
+.errorMessage {
+    color: red;
+    position: absolute;
+    font-size: 0.8rem;
+    bottom: -30%;
+    font-weight: bold;
+}
+
+.errorInput {
+    border: 1.2px solid red;
+}
+
+.errorImage {
+    background-color: red;
+    color: white;
+}
 
 /*RESULT SECTION STYLING */
 
@@ -229,6 +245,10 @@ h3{
     flex-direction: column;
     height: 60%;
 }
+.result2 {
+    display: flex;
+    flex-direction: column;
+}
 
 .monthValue {
     font-size: 2.5rem;
@@ -246,6 +266,8 @@ h3{
 
 
 
+
+/*Responsive design */
 @media (min-height: 810px){
     #radioForm > div {
         border-radius: 7px;
