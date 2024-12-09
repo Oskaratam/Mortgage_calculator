@@ -5,6 +5,7 @@ const interestOptionDiv = document.getElementById("interestWrapper");
 
 
 
+//VISUALS FOR OPTIONS
 let changeState = (pickedOption) => {
     console.log(document.querySelectorAll(".pickedOption"));
     document.querySelectorAll(".pickedOption").forEach(node => node.classList.remove("pickedOption"));
@@ -19,21 +20,33 @@ let changeState = (pickedOption) => {
 repaymentOption.addEventListener("click", () => changeState("repayment"));
 interestOption.addEventListener("click", () => changeState("interest"));
 
+//CLEAR ALL BUTTON
+
+document.getElementById("clearBtn").addEventListener("click", () => {
+    location.reload();
+})
+
+
+//CALCULATIONS 
 const calculateResults = (data) => {
     let totalRepay = 0;
-    if(data.get("type") == "repayment"){
-        let amount = parseFloat(data.get("amount"));
+    let amount = parseFloat(data.get("amount"));
         let rate = parseFloat(data.get("rate")) / 100;
         let term = parseInt(data.get("term")) * 12;
+    if(data.get("type") == "repayment"){
 
         let monthlyRate = rate / 12;
 
-        let monthlyRepayment = amount * (monthlyRate * Math.pow(1 + monthlyRate, term)) / (Math.pow(1 + monthlyRate, term) - 1);
+        let monthlyRepayment = amount * (monthlyRate * (1 + monthlyRate)**term) / ((1 + monthlyRate)**term - 1);
 
-        totalRepay = monthlyRepayment * 300;
+        totalRepay = monthlyRepayment * term;
 
-        showResults(monthlyRepayment, totalRepay);
-        
+        showResults(monthlyRepayment, totalRepay); 
+    } else if (data.get("type") == "interest") {
+        let monthlyRate = rate / 12;
+        let monthlyRepayment = (amount * monthlyRate);
+        totalRepay = monthlyRepayment * term;
+        showResults(monthlyRepayment, totalRepay); 
     }
     
 }
@@ -47,7 +60,7 @@ document.getElementById('form').addEventListener("submit", (event) => {
 } )
 
 
-
+//DISPLAYING RESULTS
 const showResults = (monthly, total) => {
     document.querySelector(".calculatorImage").style.display = "none";
     document.querySelector("h2").innerHTML = "Your results";
@@ -64,7 +77,7 @@ const showResults = (monthly, total) => {
     `
     document.querySelector("#resultDiv").style.display = "inline-block";
     document.querySelectorAll("h3").forEach(el => el.style.display = "inline-block");
-    document.getElementById("month-repay-value").innerHTML = monthly;
-    document.getElementById("total-repay-value").innerHTML = total;
+    document.getElementById("month-repay-value").innerHTML = monthly.toFixed(2);
+    document.getElementById("total-repay-value").innerHTML = total.toFixed(2);
 }
 
