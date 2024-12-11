@@ -35,6 +35,7 @@ body, main{
 main {
     width: 100%;
     flex-direction: column;
+    background-color: white;
 }
 
 
@@ -263,6 +264,10 @@ h3{
     font-size: 1.5rem;
 }
 
+#additionalResultText {
+    display: none;
+}
+
 
 
 
@@ -297,6 +302,54 @@ h3{
         height: 100%;
         width: 50%
     }
+    .resultSection {
+        border-bottom-left-radius: 15%;
+    }
+    #additionalResultText {
+        display: inline-block;
+        margin-inline-start: 0.5rem;
+        filter: opacity(50%);
+        margin-left: 0;
+    }
+    .monthValue {
+        font-size: 3.5rem;
+    }
+    .result1 {
+        height: 50%;
+    }
+    #resultDiv {
+        height: 50%;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    input {
+        height: 2.5rem;
+    }
+    .input-control > .termButton,
+    .input-control > .currencyButton,
+    .input-control > .rateButton {
+    height: 2.5rem;
+    }
+    .doubleSection {
+        position: relative;
+        display: flex;
+        direction: row;
+        justify-content: space-between;
+    }
+    .doubleSection > .input-control {
+        width: 40%;
+    }
+    .wrapper {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+@media (min-width: 1080px) {
+    #calculateBtn{
+        width: 50%;
+    };
 }
 
 @media (max-height: 890px) {

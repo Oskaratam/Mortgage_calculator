@@ -114,7 +114,8 @@ const showResults = (monthly, total) => {
     margin-bottom: 0.2rem;
     font-size: 1.5rem`;
     document.querySelector("p").style.marginTop = "0";
-    document.querySelector("p").innerHTML = "";
+    document.querySelector("#mainResultText").innerHTML = "";
+    document.querySelector("#additionalResultText").innerHTML = "Your results are shown below based on the information you provided.To adjust the results, edit the form and click 'Calculate repayments' again"
     document.querySelector(".resultsWrapper").style.cssText = `
         text-align: left;
         justify-content: normal;

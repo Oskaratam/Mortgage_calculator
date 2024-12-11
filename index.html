@@ -28,20 +28,21 @@
             <span class="errorMessage errorMessageAmount"></span>
           </div>
 
-          <div class="input-control">
-            <label for="term">Mortgage Term</label>
-            <input name="term"  id="term" type="number">
-            <button class="termButton">years</button>
-            <span class="errorMessage errorMessageTerm"></span>
-          </div>
+          <div class="doubleSection">
+            <div class="input-control">
+              <label for="term">Mortgage Term</label>
+              <input name="term"  id="term" type="number">
+              <button class="termButton">years</button>
+              <span class="errorMessage errorMessageTerm"></span>
+            </div>
 
-          <div class="input-control">
-            <label for="rate">Interest Rate</label>
-            <input max="100" step="any" name="rate"  id="rate" type="number">
-            <button class="rateButton">%</button>
-            <span class="errorMessage errorMessageRate"></span>
+            <div class="input-control">
+              <label for="rate">Interest Rate</label>
+              <input max="100" step="any" name="rate"  id="rate" type="number">
+              <button class="rateButton">%</button>
+              <span class="errorMessage errorMessageRate"></span>
+            </div>
           </div>
-
           <div id="radioForm" class="input-control">
             <label class="mortgageTypeLabel">Mortgage Type</label>
             <div class="pickedOption" id="repaymentWrapper">
@@ -65,7 +66,8 @@
       <div class="resultsWrapper">
         <img class="calculatorImage" src="assets/images/illustration-empty.svg" alt="Calculator image">
         <h2>Results shown here</h2>
-        <p>Complete the form and click "calculate repayments" to see what your monthly <br> repayments would be</p>
+        <p id="additionalResultText"></p>
+        <p id="mainResultText">Complete the form and click "calculate repayments" to see what your monthly <br> repayments would be</p>
         <div id="resultDiv">
           <div class="result1">
             <h3>Your monthly repayments</h3>
